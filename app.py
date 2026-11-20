@@ -1,3 +1,10 @@
+mport streamlit as st
+from rag_engine import load_base, ask_rag
+st.set_page_config(page_title = "Heritage AI", layout = "centered")
+st.title("Heritage AI")
+st.caption("Learn from the past, understand the present, and explore history through an interactive AI-powered chatbot.")
+st.caption("RAG pipeline with mutiple files")
+st.caption("Created by ")
 # =========================================================
 # VIBRANT COLOUR STYLING
 # =========================================================
