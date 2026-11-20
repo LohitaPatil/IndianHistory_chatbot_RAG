@@ -252,7 +252,7 @@ st.caption(
 )
 
 st.caption("RAG pipeline with multiple files")
-st.caption("Created by Lohita R Patil and Team")
+st.caption("Created by Group10")
 
 my_key = st.secrets["GROQ_API_KEY"]
 
