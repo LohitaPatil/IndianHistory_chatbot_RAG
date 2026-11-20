@@ -1,6 +1,108 @@
 import streamlit as st
 from rag_engine import load_base, ask_rag
 st.set_page_config(page_title = "Heritage AI", layout = "centered")
+with st.sidebar:
+
+    st.title("📜 Heritage AI")
+
+    st.markdown("---")
+
+    # Two buttons
+    if st.button("🔄 Pipeline", use_container_width=True):
+        st.session_state["sidebar_page"] = "pipeline"
+
+    if st.button("ℹ️ Info", use_container_width=True):
+        st.session_state["sidebar_page"] = "info"
+
+    st.markdown("---")
+
+    # Default sidebar
+    if "sidebar_page" not in st.session_state:
+        st.session_state["sidebar_page"] = "none"
+
+    # ---------------- PIPELINE ----------------
+
+    if st.session_state["sidebar_page"] == "pipeline":
+
+        st.subheader("🔄 RAG Flow")
+
+        st.write("📚 **History Files**")
+        st.caption("Multiple history documents")
+
+        st.write("⬇️")
+
+        st.write("📄 **Load Documents**")
+        st.caption("Extract text from files")
+
+        st.write("⬇️")
+
+        st.write("✂️ **Chunking**")
+        st.caption("Split text into smaller chunks")
+
+        st.write("⬇️")
+
+        st.write("🔢 **Embeddings**")
+        st.caption("Convert text into vectors")
+
+        st.write("⬇️")
+
+        st.write("🗄️ **Vector Index**")
+        st.caption("Store and search vectors")
+
+        st.write("⬇️")
+
+        st.write("🔍 **Retrieval**")
+        st.caption("Find relevant history")
+
+        st.write("⬇️")
+
+        st.write("🧠 **LLM**")
+        st.caption("Generate the answer")
+
+        st.write("⬇️")
+
+        st.write("💬 **Final Answer**")
+
+    # ---------------- INFO ----------------
+
+    elif st.session_state["sidebar_page"] == "info":
+
+        st.subheader("ℹ️ Heritage AI")
+
+        st.write("### 🤖 Model")
+
+        st.caption(
+            "Heritage AI is a RAG-based history chatbot. "
+            "It retrieves relevant information from historical "
+            "documents and uses an LLM to generate contextual answers."
+        )
+
+        st.write("### 🛠️ Technologies")
+
+        st.write("🐍 **Python**")
+        st.caption("Backend and RAG implementation")
+
+        st.write("🎈 **Streamlit**")
+        st.caption("Interactive user interface")
+
+        st.write("🔎 **RAG**")
+        st.caption("Retrieval-Augmented Generation")
+
+        st.write("🔢 **Embeddings**")
+        st.caption("Converts text into vector representations")
+
+        st.write("🗄️ **Vector Index**")
+        st.caption("Stores and retrieves relevant vectors")
+
+        st.write("🧠 **Groq LLM**")
+        st.caption("Generates natural-language responses")
+
+        st.write("### 👥 Group Members")
+
+        st.write("👤 Lohita R Patil")
+        st.write("👤 Member 2")
+        st.write("👤 Member 3")
+        st.write("👤 Member 4")
 st.title("Heritage AI")
 st.caption("Learn from the past, understand the present, and explore history through an interactive AI-powered chatbot.")
 st.caption("RAG pipeline with mutiple files")
